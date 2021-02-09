@@ -1,6 +1,6 @@
 # Dashboard for React - Localization
 
-The example shows how to localize the Dashboard component in an React application:
+The example shows how to localize the Dashboard component in a React application:
 
 - Translate UI element captions to a different language: dialog boxes, buttons, menu items, error messages, etc.
 - Format numbers, dates, and currencies according to specific culture settings.
