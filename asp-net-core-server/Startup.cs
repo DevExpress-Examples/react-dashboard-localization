@@ -42,6 +42,14 @@ namespace AspNetCoreDashboardBackend {
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+            var supportedCultures = new[] { "en-US", "de-DE" };
+            var opts = new RequestLocalizationOptions()
+                .SetDefaultCulture(supportedCultures[1])
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+            opts.RequestCultureProviders.Clear();
+            app.UseRequestLocalization(opts);
+
             // Registers the DevExpress middleware.
             app.UseDevExpressControls();
             app.UseRouting();
