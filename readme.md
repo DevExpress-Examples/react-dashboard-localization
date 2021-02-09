@@ -28,7 +28,7 @@ The **dashboard-react-app** project shows how to localize a client application w
 <!-- default file list -->
 *Files to look at*:
 
-* [Startup.cs](./asp-net-core-server/Startup.cs)
+* [Startup.cs](./asp-net-core-server/Startup.cs#L45)
 
 <!-- default file list end -->
 
