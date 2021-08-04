@@ -56,6 +56,7 @@ Open ```http://localhost:3000/``` in your browser to see the result.
 ## Documentation
 
 - [Localize Dashboard Component for React](https://docs.devexpress.com/Dashboard/402539/web-dashboard/dashboard-component-for-react/localization)
+- [Install DevExpress Controls Using NuGet Packages](https://docs.devexpress.com/GeneralInformation/115912/installation/install-devexpress-controls-using-nuget-packages)
 
 
 ## More Examples
