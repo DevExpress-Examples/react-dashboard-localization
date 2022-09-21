@@ -2,17 +2,14 @@ using DevExpress.AspNetCore;
 using DevExpress.DashboardAspNetCore;
 using DevExpress.DashboardCommon;
 using DevExpress.DashboardWeb;
-using DevExpress.DataAccess.Json;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System;
 
-namespace AspNetCoreDashboardBackend
-{
+namespace AspNetCoreDashboardBackend {
     public class Startup
     {
         public Startup(IConfiguration configuration, IWebHostEnvironment hostingEnvironment)
@@ -46,12 +43,9 @@ namespace AspNetCoreDashboardBackend
                 configurator.SetDataSourceStorage(CreateDataSourceStorage());
                 return configurator;
             });
-
-
         }
 
-        public DataSourceInMemoryStorage CreateDataSourceStorage()
-        {
+        public DataSourceInMemoryStorage CreateDataSourceStorage() {
             DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
             DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("ObjectDataSource", typeof(ProductSales));
             objDataSource.DataMember = "GetProductSales";
@@ -59,13 +53,18 @@ namespace AspNetCoreDashboardBackend
             return dataSourceStorage;
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            // Registers the DevExpress middleware.            
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+            var supportedCultures = new[] { "en-US", "de-DE" };
+            var opts = new RequestLocalizationOptions()
+                .SetDefaultCulture(supportedCultures[1])
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+            opts.RequestCultureProviders.Clear();
+            app.UseRequestLocalization(opts);
+
+            // Registers the DevExpress middleware.
             app.UseDevExpressControls();
-            // Registers routing.
             app.UseRouting();
-            // Registers CORS policies.
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints => {
                 // Maps the dashboard route.
@@ -73,14 +72,6 @@ namespace AspNetCoreDashboardBackend
                 // Requires CORS policies.
                 endpoints.MapControllers().RequireCors("CorsPolicy");
             });
-        }
-
-    }
-    public class DefaultDashboardController : DashboardController
-    {
-        public DefaultDashboardController(DashboardConfigurator configurator, IDataProtectionProvider dataProtectionProvider = null)
-         : base(configurator, dataProtectionProvider)
-        {
         }
     }
 }
