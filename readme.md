@@ -16,7 +16,7 @@ The example shows how to localize the Dashboard component in a React application
 
 The example has the following structure:
 
-- The [asp-net-core-server](asp-net-core-server) folder contains the backend project built with ASP.NET Core 3.1.
+- The [asp-net-core-server](asp-net-core-server) folder contains the backend project built with ASP.NET Core 6.0.
 - The [dashboard-react-app](dashboard-react-app) folder contains the client application built with React.
 
 ### Client Localization
