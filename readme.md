@@ -20,8 +20,8 @@ The example has the following structure:
 - The [dashboard-react-app](dashboard-react-app) folder contains the client application built with React.
 
 ### Client Localization
-<!-- default file list -->
-*Files to look at*:
+
+*Files to review*:
 
 * [App.js](./dashboard-react-app/src/App.js)
 
@@ -30,12 +30,10 @@ The example has the following structure:
 The **dashboard-react-app** project shows how to localize a client application with the [component-specific JSON files](https://docs.devexpress.com/Dashboard/402539/web-dashboard/dashboard-component-for-react/localization#localize-ui) for the German market (the `de` culture). Intl is used to format to dates, numbers, and currencies.
 
 ### Server Localization
-<!-- default file list -->
-*Files to look at*:
+
+*Files to review*:
 
 * [Startup.cs](./asp-net-core-server/Startup.cs#L45)
-
-<!-- default file list end -->
 
 Since the Web Dashboard exports data on the server side, you need to localize the server to complete the localization process. The **asp-net-core-server** project contains satellite resource assemblies for the German culture.
 
