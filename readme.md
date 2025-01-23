@@ -24,7 +24,7 @@ The example has the following structure:
 
 *Files to review*:
 
-* [App.tsx](./dashboard-react-app/src/App.jtsx)
+* [App.tsx](./dashboard-react-app/src/App.tsx)
 
 <!-- default file list end -->
 
