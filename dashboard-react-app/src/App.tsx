@@ -9,7 +9,6 @@ import 'devexpress-dashboard/dist/css/dx-dashboard.light.css';
 import DashboardControl from 'devexpress-dashboard-react';
 import { ResourceManager } from 'devexpress-dashboard';
 import { locale } from "devextreme/localization";
-
 import deAnalyticsMessages from '../jsonResources/dx-analytics-core.de.json';
 import deDashboardMessages from '../jsonResources/dx-dashboard.de.json';
 
@@ -27,7 +26,7 @@ function App() {
   return (
     <div style={{ position : 'absolute', top : '0px', left: '0px', right : '0px', bottom: '0px' }}>
       <DashboardControl style={{ height: '100%' }} 
-        endpoint="https://demos.devexpress.com/services/dashboard/api">
+        endpoint="http://localhost:5000/api/dashboard">
       </DashboardControl>
     </div>
   )
