@@ -24,7 +24,7 @@ The example has the following structure:
 
 *Files to review*:
 
-* [App.js](./dashboard-react-app/src/App.js)
+* [App.tsx](./dashboard-react-app/src/App.jtsx)
 
 <!-- default file list end -->
 
@@ -62,7 +62,7 @@ In the **dashboard-react-app** folder, run the following commands:
 
 ```
 npm install
-npm start
+npm run dev
 ```
 
 Open ```http://localhost:3000/``` in your browser to see the result.
